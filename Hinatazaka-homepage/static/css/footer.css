@@ -1,0 +1,123 @@
+footer{
+  background-color: #5bbee5;
+  /* height: 500px; */
+  width: 100%;
+}
+footer .ads-section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .ads-section .ads-inner{
+  width: 1040px;
+  padding: 0 200px;
+}
+footer .ads-section .ads-inner .ads-list{
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: repeat(3, 1fr);
+}
+footer .ads-section .ads-inner .ads-list .ads-item{
+  /* background-color: #fff; */
+  flex: 1;
+  /* height: 60px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .contact-section{
+  width: 100%;
+  margin-top: 60px;
+}
+footer .contact-section .contact-inner{
+  width: 900px;
+  margin: 0 auto;
+}
+footer .contact-section .contact-inner .contact-list{
+  display: flex;
+  align-items: center;
+}
+footer .contact-section .contact-inner .contact-list .contact-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  color: #fff;
+}
+footer .contact-section .contact-inner .contact-list .contact-item .contact-img{
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  /* background-color: #fff; */
+  border-radius: 20px;
+}
+footer .contact-section .contact-inner .contact-list .contact-item .contact-img img{
+  width: 100%;
+}
+footer .link-section{
+  margin-top: 60px;
+  width: 100%;
+  height: 100px;
+}
+footer .link-section .link-inner{
+  width: 900px;
+  margin: 0 auto;
+}
+footer .link-section .link-inner .link-list{
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fff;
+}
+footer .link-section .link-inner .link-list .link-item{
+  color: #fff;
+  /* font-size: 20px; */
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  /* padding-right: 20px; */
+  position: relative;
+}
+footer .link-section .link-inner .link-list .link-item:after{
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: -18px;
+  transform: rotate(46deg);
+  background-color: #FFF;
+  z-index: 50;
+}
+footer .copyright-section{
+  width: 100%;
+  padding: 30px 0;
+}
+footer .copyright-section .copyright-inner{
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+}
+footer .copyright-section .copyright-inner .copyright-content{
+  display: flex;
+}
+footer .copyright-section .copyright-inner .copyright-content .copyright-text{
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+footer .copyright-section .copyright-inner .copyright-content .copyright-pic{
+  width: 64px;
+  height: 64px;
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/img/jasrac.jpg");
+  background-size: cover;
+}

@@ -1,0 +1,18 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: Overpass, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;;
+}
+h1, h2, h3{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+ul li {
+  list-style: none;
+}
+a, a:active, a:visited{
+  text-decoration: none;
+  color: #000;
+}

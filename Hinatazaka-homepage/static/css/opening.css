@@ -1,0 +1,191 @@
+.opening-anime{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  height: calc(100vh);
+  z-index: 9999999;
+  animation: hidden 8s ease;
+}
+.opening-anime-inner{
+  width: 100%;
+  z-index: 99999;
+}
+.opening-anime-progress{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  visibility: hidden;
+  height: calc(0.25vh);
+  background-color: #000;
+  animation: progress 0.5s linear;
+}
+.opening-anime-top{
+  position: absolute;
+  top: 0;
+  animation: slide-up 1s cubic-bezier(0, 0.93, 0.34, 0.19);
+  animation-delay: 3.5s;
+  width: 100%;
+  background-color: #fff;
+}
+.opening-anime-bottom{
+  position: absolute;
+  bottom: 0;
+  animation: slide-down 1s cubic-bezier(0, 0.93, 0.34, 0.19);
+  animation-delay: 3.5s;
+  width: 100%;
+  background-color: #fff;
+}
+.opening-anime-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 100px;
+  font-family: 方正兰亭超细黑简体;
+  line-height: 100px;
+}
+.opening-anime-content{
+  width: 100%;
+  height: calc(100vh);
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/product/images/special/2nd_single_announce/bg_popup.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.opening-anime-layer{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  visibility: hidden;
+  animation: hidden 5s ease;
+}
+.opening-anime-layer .notes{
+  width: 100%;
+  height: calc(100vh);
+  visibility: hidden;
+  animation: hidden 4s ease;
+  animation-delay: 0.5s;
+  position: absolute;
+  top: 0;
+}
+.opening-anime-layer .notes img{
+  width: 140px;
+  animation: drop 2.5s ease;
+  opacity: 0;
+  position: absolute;
+}
+.opening-anime-layer .notes img:nth-child(1){
+  top: 60%;
+  animation-delay: 1s;
+  left: 40%;
+}
+.opening-anime-layer .notes img:nth-child(2){
+  top: 55%;
+  animation-delay: 1.5s;
+  animation-duration: 2s;
+  left: 47%;
+}
+.opening-anime-layer .notes img:nth-child(3){
+  top: 50%;
+  animation-delay: 2s;
+  animation-duration: 1.5s;
+  left: 55%;
+}
+.opening-anime-layer .table{
+  width: 100%;
+  height: calc(100vh);
+  display: flex;
+  align-items: center;
+}
+.opening-anime-layer .table img{
+  width: 100%;
+  height: 250px;
+  visibility: hidden;
+  animation: collapse 3.5s ease;
+  animation-delay: 0.5s;
+}
+@keyframes slide-up {
+  0%{
+    height: calc(50vh);
+  }
+  100%{
+    height: calc(0vh);
+    display: none;
+  }
+}
+@keyframes slide-down {
+  0%{
+    height: calc(50vh);
+  }
+  100%{
+    height: calc(0vh);
+    display: none;
+  }
+}
+@keyframes collapse {
+  0%{
+    transform: scale(1,0);
+    visibility: hidden;
+  }
+  20%{
+    transform: scale(1,1);
+    visibility: visible;
+    opacity: 1;
+  }
+  80%{
+    transform: scale(1,1);
+    visibility: visible;
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1,0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes hidden {
+  0%{
+    visibility: visible;
+  }
+  80%{
+    opacity: 1;
+    visibility: visible;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes progress {
+  0%{
+    width: 0;
+    visibility: visible;
+  }
+  100%{
+    width: 100%;
+    visibility: hidden;
+  }
+}
+@keyframes drop {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  60%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  90%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}

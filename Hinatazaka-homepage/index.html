@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>日向坂46公式サイト</title>
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/css/navbar.css">
+  <link rel="stylesheet" href="static/css/opening.css">
+  <link rel="stylesheet" href="static/css/footer.css">
+  <link rel="stylesheet" href="static/css/main.css">
+</head>
+
+<body>
+  <div class="nav">
+    <div class="today-schedule">
+      <section class="schedule-inner">
+        <div class="schedule-title">TODAY'S SCHEDULE</div>
+        <ul class="schedule-list">
+          <li class="schedule-item">
+            個別握手会：パシフィコ横浜(神奈川)
+          </li>
+          <li class="schedule-item">
+            テレビ東京「日向坂で会いましょう」
+          </li>
+        </ul>
+        <div class="schedule-btn">
+          <span onclick="showSchedule()">+</span>
+        </div>
+      </section>
+    </div>
+    <div class="navbar">
+      <header>
+        <div class="logo">
+          <a href="/index.html">
+            <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/logo_side.svg" alt="">
+          </a>
+        </div>
+        <nav class="nav-list">
+          <ul class="nav-list-inner">
+            <li class="nav-item">
+              <a href="/pages/news.html">
+                ニュース
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                スケジュール
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                メンバー
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                ブログ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                ディスコ
+                グラフィー
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                動画
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                TV
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                握手会
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="">
+                日向坂46とは？
+              </a>
+             </li>
+            <li class="nav-item">
+              <a href="">
+                グッズ
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
+  <div class="beating-notes">
+    <div class="beating-notes-inner">
+      <div class="beating-notes-list" id="beating-notes"></div>
+    </div>
+  </div>
+  <div class="opening-anime">
+    <div class="opening-anime-inner">
+      <div class="opening-anime-layer">
+        <div class="table">
+          <img src="static/images/tabs.svg" alt="">
+        </div>
+        <div class="notes">
+          <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/special/2nd_single_announce/note1.svg" alt="">
+          <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/special/2nd_single_announce/note2.svg" alt="">
+          <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/special/2nd_single_announce/note3.svg" alt="">
+        </div>
+      </div>
+      <div class="opening-anime-progress"></div>
+      <div class="opening-anime-close" onclick="skipAnime()">&times;</div>
+      <div class="opening-anime-content">
+        <img src="https://cdn.hinatazaka46.com/images/14/331/662aa1397005bf684f2fc73bfd7a4.jpg" alt="">
+      </div>
+      <div class="opening-anime-top"></div>
+      <div class="opening-anime-bottom"></div>
+    </div>
+  </div>
+  <div id="bg"></div>
+  <div id="container">
+    <div class="arrow-controler">
+      <div class="arrow-prev">
+        <div class="arrow"></div>
+      </div>
+      <div class="arrow-next">
+        <div class="arrow"></div>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" index="1" onclick="handleClick(event)" style="background-image: url('https://cdn.hinatazaka46.com/images/14/331/662aa1397005bf684f2fc73bfd7a4.jpg')">1</div>
+        <div class="carousel-item" index="2" onclick="handleClick(event)">2</div>
+        <div class="carousel-item" index="3" onclick="handleClick(event)">3</div>
+        <div class="carousel-item" index="4" onclick="handleClick(event)">4</div>
+        <div class="carousel-item" index="5" onclick="handleClick(event)">5</div>
+        <div class="carousel-item" index="1" onclick="handleClick(event)" style="background-image: url('https://cdn.hinatazaka46.com/images/14/331/662aa1397005bf684f2fc73bfd7a4.jpg')">1</div>
+        <div class="carousel-item" index="2" onclick="handleClick(event)">2</div>
+      </div>
+      <div class="carousel-desc">
+        <div class="carousel-info">
+          <div class="info-title">2ndシングル　「ドレミソラシド」</div>
+          <div class="info-content">2019.7.17 Release</div>
+        </div>
+        <div class="carousel-arrow"></div>
+      </div>
+      <div class="indicator">
+        <div class="indicator-inner">
+          <div class="indicator-item">
+            <div class="dot active" index="1" onclick="handleClick(event)"></div>
+          </div>
+          <div class="indicator-item">
+            <div class="dot" index="2" onclick="handleClick(event)"></div>
+          </div>
+          <div class="indicator-item">
+            <div class="dot" index="3" onclick="handleClick(event)"></div>
+          </div>
+          <div class="indicator-item">
+            <div class="dot" index="4" onclick="handleClick(event)"></div>
+          </div>
+          <div class="indicator-item">
+            <div class="dot" index="5" onclick="handleClick(event)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="news-section">
+      <section class="top-news">
+        <div class="top-inner">
+          <div class="top-content">
+            <h1 class="top-news-header">
+              TOPICS
+            </h1>
+            <div class="top-news-content">
+              <p class="top-news-text">2ndシングル『ドレミソラシド』7月17日(水)にリリース決定!!</p>
+              <p class="top-news-text">2ndシングル『ドレミソラシド』7月17日(水)にリリース決定!!</p>
+            </div>
+            <div class="collaspe-btn">
+              <span onclick="showCollapse()">+</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="other-news">
+        <div class="other-inner">
+          <h1 class="other-news-header">NEWS</h1>
+          <ul class="other-news-list">
+            <li class="other-news-item">
+              <div class="time">2019.05.30</div>
+              <div class="news-content">「BUBKA」7月号(5月31日(金)発売)に金村美玖が登場！！</div>
+            </li>
+            <li class="other-news-item">
+              <div class="time">2019.05.30</div>
+              <div class="news-content">「BUBKA」7月号(5月31日(金)発売)に金村美玖が登場！！</div>
+            </li>
+            <li class="other-news-item">
+              <div class="time">2019.05.30</div>
+              <div class="news-content">「BUBKA」7月号(5月31日(金)発売)に金村美玖が登場！！</div>
+            </li>
+            <li class="other-news-item">
+              <div class="time">2019.05.30</div>
+              <div class="news-content">「BUBKA」7月号(5月31日(金)発売)に金村美玖が登場！！</div>
+            </li>
+            <li class="other-news-item">
+              <div class="time">2019.05.30</div>
+              <div class="news-content">「BUBKA」7月号(5月31日(金)発売)に金村美玖が登場！！</div>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <div class="more-inner">
+            <span>MORE</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="blog-section">
+      <section class="blog-inner">
+        <div class="blog-header">OFFICIAL BLOG</div>
+        <div class="blog-list-container">
+          <ul class="blog-list" id="dragable-slider">
+            <li class="blog-item">
+              <div class="blog-img" style="background-image: url('https://cdn.hinatazaka46.com/images/14/6c7/24f33d936cc57157ef221794691f6/480_480_102400.jpg')">
+                <div class="blog-title">
+                  最近の濱岸ひより
+                </div>
+              </div>
+              <div class="blog-info">
+                <div class="info-img" style="background-image: url('https://cdn.hinatazaka46.com/images/14/df1/fa48a4e0341bb29a50fe12caf91d7/160_160_102400.jpg')"></div>
+                <div class="info-name">
+                  濱岸ひより
+                  <div class="time">2019.05.31</div>
+                </div>
+              </div>
+            </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+            <li class="blog-item">
+                <div class="blog-img"></div>
+                <div class="blog-info">
+                  <div class="info-img"></div>
+                  <div class="info-name"></div>
+                </div>
+              </li>
+          </ul>
+        </div>
+        <div class="more">
+          <div class="more-inner">
+            <span>MORE</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="video-section">
+      <section class="video-inner">
+        <div class="video-header">
+          VIDEOS
+          <div class="more" style="margin-left: 70px">
+            <div class="more-inner">
+              <span style="font-size: 18px;display: flex;justify-content:center;
+              align-items:center;width: 120px;height:40px;font-weight: 400">MORE</span>
+            </div>
+          </div>
+        </div>
+        <ul class="video-list">
+          <li class="video-item">
+            <div class="video-img">
+              <img src="https://cdn.hinatazaka46.com/images/14/23b/f7850f71d77dda7a26964a0dfccf8/400_400_102400.jpg" alt="">
+            </div>
+            <div class="video-info">
+              日向坂46 『けやき坂46ストーリー ～ひなたのほうへ～「加藤史帆」』予告編
+            </div>
+          </li>
+          <li class="video-item">
+            <div class="video-img">
+              <img src="https://cdn.hinatazaka46.com/images/14/b80/541f1ae851b276e90bfa77c0b65ae/400_400_102400.jpg" alt="">
+            </div>
+            <div class="video-info">
+              日向坂46 『けやき坂46ストーリー ～ひなたのほうへ～「加藤史帆」』予告編
+            </div>
+          </li>
+          <li class="video-item">
+            <div class="video-img">
+              <img src="https://cdn.hinatazaka46.com/images/14/2c0/a2b16b2e20ae421674f40e31c967c/400_400_102400.jpg" alt="">
+            </div>
+            <div class="video-info">
+              日向坂46 『けやき坂46ストーリー ～ひなたのほうへ～「加藤史帆」』予告編
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="goods-section">
+      <section class="goods-inner">
+        <div class="goods-header">NEW RELEASE</div>
+        <ul class="goods-list">
+          <li class="goods-item">
+            <div class="goods-img"></div>
+            <div class="goods-info">
+              <div class="goods-subtitle">1stシングル</div>
+              <div class="goods-title">キュン[初回仕様限定盤TYPE-A]</div>
+              <div class="goods-desc">2019.03.27 On Sale!!</div>
+            </div>
+          </li>
+          <li class="goods-item">
+            <div class="goods-img"></div>
+            <div class="goods-info">
+              <div class="goods-subtitle"></div>
+              <div class="goods-title"></div>
+              <div class="goods-desc"></div>
+            </div>
+          </li>
+          <li class="goods-item">
+            <div class="goods-img"></div>
+            <div class="goods-info">
+              <div class="goods-subtitle"></div>
+              <div class="goods-title"></div>
+              <div class="goods-desc"></div>
+            </div>
+          </li>
+          <li class="goods-item">
+            <div class="goods-img"></div>
+            <div class="goods-info">
+              <div class="goods-subtitle"></div>
+              <div class="goods-title"></div>
+              <div class="goods-desc"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="more">
+          <div class="more-inner">
+            <span>MORE</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="concert-section">
+      <section class="concert-inner">
+        <div class="concert-content">
+          <div class="concert-img"></div>
+          <div class="concert-info">
+            <div class="info-subtitle">
+              日向坂46個別握手会
+            </div>
+            <div class="info-title">
+              1stシングル「キュン」発売記念
+            </div>
+            <div class="info-desc">
+              個別握手会開催!!
+            </div>
+            <div class="info-deco">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="info-box">
+              <div class="info-next">
+                NEXT
+                <div class="info-date">
+                  <div class="date-year">2019</div>
+                  <div class="date-month">6</div>
+                  <div class="date-day">8</div>
+                </div>
+              </div>
+              <div class="info-btn">個別握手会</div>
+              <div class="info-detail">
+                デビューシングル『キュン』発売記念 個別握手会 幕張メッセ(千葉)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tweet-section">
+      <div class="copyright">Tweets by hinatazaka46</div>
+      <div class="tweet-inner">TWITTER</div>
+    </div>
+  </main>
+  <footer>
+    <div class="ads-section">
+      <section class="ads-inner">
+        <ul class="ads-list">
+          <li class="ads-item">
+            <img src="https://cdn.hinatazaka46.com/images/14/465/4b5f71e7f4d4f0d796dbeab7159ac.jpg" alt="">
+          </li>
+          <li class="ads-item">
+            <img src="https://cdn.hinatazaka46.com/images/14/ed9/236d2c08dbda29708de4b1f081bf3.jpg" alt="">
+          </li>
+          <li class="ads-item">
+            <img src="https://cdn.hinatazaka46.com/images/14/c57/5453a58d5c8963c907c1b2e9c6c88.jpg" alt="">
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="contact-section">
+      <section class="contact-inner">
+        <ul class="contact-list">
+          <li class="contact-item">
+            <div class="contact-img">
+              <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/icon_logo_radius.svg" alt="">
+            </div>
+            <div class="contact-content">
+              メンバーへの
+              <br>
+              出演依頼
+              </div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-img">
+              <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/icon_logo_radius.svg" alt="">
+            </div>
+            <div class="contact-content">
+              メッセージアプリ
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-img">
+              <img src="https://cdn.hinatazaka46.com/files/14/hinata/img/icon_logo_radius.svg" alt="">
+            </div>
+            <div class="contact-content">
+              アーカイブ
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="link-section">
+      <section class="link-inner">
+        <ul class="link-list">
+          <li class="link-item">PRODUCER</li>
+          <li class="link-item">FAQ</li>
+          <li class="link-item">お問い合わせ</li>
+        </ul>
+      </section>
+    </div>
+    <div class="copyright-section">
+      <section class="copyright-inner">
+        <div class="copyright-content">
+          <div class="copyright-text">
+            JASRAC許諾第9018170001Y38029号
+            <br>
+            JASRAC許諾第9018170002Y31018号
+          </div>
+          <div class="copyright-pic"></div>
+        </div>
+      </section>
+    </div>
+  </footer>
+  <script src="static/js/carousel.js"></script>
+  <script src="static/js/dragableSlider.js"></script>
+  <script src="static/main.js"></script>
+</body>
+
+</html>

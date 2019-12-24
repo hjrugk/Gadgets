@@ -1,0 +1,733 @@
+.beating-notes{
+  width: 100%;
+  position: absolute;
+  /* z-index: 998; */
+  top: 600px;
+  left: 0;
+}
+.beating-notes .beating-notes-inner{
+  width: 1400px;
+  /* background-color: #eee; */
+  margin: 0 auto;
+  height: 3400px;
+}
+.beating-notes .beating-notes-inner .beating-notes-list{
+  position: relative;
+  width: 1400px;
+  height: 3400px;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item{
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  z-index: 998;
+  user-select: none;
+  border-radius: 50%;
+  /* animation: beating 1s linear alternate infinite; */
+  /* background-color: rgba(103, 183, 178, 0.5); */
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item:before{
+  animation-name: beating;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item:after{
+  animation-name: beating;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+}
+.beating-notes-item-1:before,.beating-notes-item-1:after{
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+}
+.beating-notes-item-2:before,.beating-notes-item-2:after{
+  animation-duration: 1.8s;
+  animation-delay: 0.3s;
+}
+.beating-notes-item-3:before,.beating-notes-item-3:after{
+  animation-duration: 2.5s;
+  animation-delay: 1.5s;
+}
+.beating-notes-item-4:before,.beating-notes-item-4:after{
+  animation-duration: 1.0s;
+  animation-delay: 1.9s;
+}
+.beating-notes-item-1{
+  transform: rotate(-30deg)
+}
+.beating-notes-item-2{
+  transform: rotate(0deg)
+}
+.beating-notes-item-3{
+  transform: rotate(30deg)
+}
+.beating-notes-item-4{
+  transform: rotate(15deg)
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item img{
+  animation: jumping 1.5s linear alternate infinite;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item.beating-notes-item-1 img{
+  animation-delay: 0.5s;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item.beating-notes-item-2 img{
+  animation-delay: 1.5s;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item.beating-notes-item-3 img{
+  animation-delay: 0.75s;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item.beating-notes-item-4 img{
+  animation-delay: 1s;
+}
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item:before,
+.beating-notes .beating-notes-inner .beating-notes-list .beating-notes-item:after{
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #5bbee5;
+  opacity: 0.03;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes beating {
+  0% {transform: scale(1);
+    opacity: 0.2;}
+  100% {transform: scale(0);
+    opacity: 0.03;}
+}
+@keyframes jumping {
+  0%{
+    transform: translateY(10px)
+  }
+  100%{
+    transform: translateY(0px)
+  }
+}
+#bg{
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/img/special/2nd_single_announce/bg_triangle_right2.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 1400px;
+  height: 1600px;
+  position: absolute;
+  z-index: -999;
+  right: 0;
+  top: 0;
+}
+#container{
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.carousel{
+  width: 1200px;
+  margin-top: 50px;
+}
+#container .arrow-controler{
+  z-index: 99;
+  position: absolute;
+  width: 1330px;
+  height: 600px;
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+#container .arrow-controler .arrow-prev .arrow{
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  border-left: 1px solid #67b7b2;
+  border-bottom: 1px solid #67b7b2;
+}
+#container .arrow-controler .arrow-next{
+  display: flex;
+  justify-content: flex-end;
+}
+#container .arrow-controler .arrow-next .arrow{
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  border-top: 1px solid #67b7b2;
+  border-right: 1px solid #67b7b2;
+}
+.carousel-inner{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 100px;
+  /* transition: transform 0.3s ease; */
+}
+.carousel-desc{
+  width: 1200px;
+  bottom: 120px;
+  height: 100px;
+  position: absolute;
+}
+.carousel-desc .carousel-info{
+  height: 100px;
+  width: 400px;
+  padding: 40px 80px;
+  border-radius: 0 40px 0 40px;
+  background: linear-gradient(to right, #5bbee5, #52ddae);
+}
+.carousel-desc .carousel-info .info-title, .carousel-desc .carousel-info .info-content{
+  color: #fff;
+  font-size: 25px;
+  line-height: 40px;
+}
+.carousel-desc .carousel-arrow{
+  width: 120px;
+  height: 50px;
+  position: absolute;
+  left: 520px;
+  bottom: -10px;
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/img/icon_slider_arrow.svg");
+  background-repeat: no-repeat;
+}
+.carousel .carousel-inner .carousel-item{
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-radius: 40px;
+  width: 1200px;
+  height: 600px;
+  background-color: deeppink;
+  box-shadow: 0 0 10px #ccc;
+}
+.carousel .indicator{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.indicator .indicator-inner{
+  width: 1200px;
+  display: flex;
+  padding: 0 0 0 30px;
+}
+.indicator .indicator-inner .indicator-item{
+  height: 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.indicator .indicator-inner .indicator-item .dot{
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: all 0.3s linear;
+}
+.indicator .indicator-inner .indicator-item .dot.active{
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+}
+.carousel .carousel-inner .carousel-item.active{
+  box-shadow: 0 0 15px #aaa;
+}
+main{
+  margin-top: 50px;
+}
+main .news-section{
+  width: 100%;
+}
+main .news-section .top-news{
+  width: 100%;
+  height: 80px;
+  z-index: 999;
+  margin-bottom: 50px;
+}
+main .news-section .top-news .top-inner{
+  width: 1040px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+main .news-section .top-news .top-inner .top-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  height: 80px;
+  transition: height 0.3s ease;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+main .news-section .top-news .top-inner .top-content .top-news-header{
+  margin-right: 50px;
+}
+main .news-section .top-news .top-inner .top-content .top-news-content{
+  flex: 1;
+}
+main .news-section .top-news .top-inner .top-content .top-news-content .top-news-text{
+  height: 80px;
+  transition: height 0.2s ease;
+  line-height: 30px;
+  overflow: hidden;
+}
+main .news-section .top-news .top-inner .top-content .top-news-content .top-news-text:last-child{
+  height: 0px;
+}
+main .news-section .top-news .top-inner .top-content .collaspe-btn{
+  color: #67b7b2;
+  height: 80px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  top: -15px;
+  font-size: 40px;
+}
+main .news-section .top-news .top-inner .top-content .collaspe-btn span{
+  transition: all 0.3s ease;
+}
+main .news-section .other-news{
+  width: 100%;
+  width: 1040px;
+  margin: 0 auto;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(50px);
+  transition: all 0.3s ease;
+}
+main .news-section .other-news .other-inner{
+  padding: 20px 40px;
+  box-sizing: border-box;
+  width: 1040px;
+  margin: 0 auto;
+  display: flex;
+}
+main .news-section .other-news .other-inner .other-news-header{
+  margin-right: 50px;
+  cursor: pointer;
+}
+main .news-section .other-news .other-inner .other-news-list .other-news-item{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  color: #67b7b2;
+}
+main .news-section .other-news .other-inner .other-news-list .other-news-item .news-content{
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+main .news-section .other-news .other-inner .other-news-list .other-news-item:hover .news-content{
+  color: #577979;
+}
+main .news-section .other-news .other-inner .other-news-list .other-news-item .time{
+  margin-right: 50px;
+  color: #ccc;
+}
+main .blog-section{
+  width: 100%;
+  overflow: hidden;
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/product/images/special/2nd_single_announce/bg_triangle_left.svg");
+  background-repeat: no-repeat;
+}
+main .blog-section .blog-inner{
+  width: 1200px;
+  padding: 40px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease;
+}
+main .blog-section .blog-inner .blog-header{
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+main .blog-section .blog-inner .blog-list-container{
+  width: 100%;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list{
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 60px;
+  padding-right: 80px;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-img{
+  width: 250px;
+  cursor: pointer;
+  height: 400px;
+  background-color: deeppink;
+  border-radius: 20px 20px 20px 0;
+  position: relative;
+  box-shadow: 0 0 30px #ccc;
+  transition: all 1s ease;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item:hover .blog-img{
+  transform: scale(0.95);
+  box-shadow: 0 0 40px #aaa;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-info{
+  width: 250px;
+  bottom: 20px;
+  height: 60px;
+  position: relative;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-info .info-img{
+  position: absolute;
+  cursor: pointer;
+  bottom: -10px;
+  left: -20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #eee;
+  /* border: 1px solid #000; */
+  background-size: contain;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-img .blog-title{
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-info .info-name{
+  position: absolute;
+  cursor: pointer;
+  padding-left: 70px;
+  color: #67b7b2;
+  padding-top: 35px;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item .blog-info .info-name .time{
+  padding-top: 20px;
+  color: #ccc;
+}
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item:nth-child(2), main .blog-section .blog-inner .blog-list-container .blog-list .blog-item:nth-child(4),
+main .blog-section .blog-inner .blog-list-container .blog-list .blog-item:nth-child(6), main .blog-section .blog-inner .blog-list-container .blog-list .blog-item:nth-child(8){
+  padding-top: 40px;
+}
+main .video-section{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/product/images/special/2nd_single_announce/bg_triangle_right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+main .video-section .video-inner{
+  width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease;
+  flex-direction: row-reverse;
+  padding: 20px 40px;
+}
+main .video-section .video-inner .video-header{
+  padding-left: 50px;
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 30px;
+  width: 100px;
+}
+main .video-section .video-inner .video-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+}
+main .video-section .video-inner .video-list .video-item .video-img{
+  width: 300px;
+  cursor: pointer;
+  /* height: 160px; */
+  /* background-color: deeppink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  box-shadow: 0 0 20px #ccc;
+  transition: all 1s ease;
+}
+main .video-section .video-inner .video-list .video-item .video-img img{
+  width: 100%;
+}
+main .video-section .video-inner .video-list .video-item:hover .video-img{
+  transform: scale(0.95);
+  box-shadow: 0 0 30px #aaa;
+}
+main .video-section .video-inner .video-list .video-item .video-info{
+  color: #ccc;
+  cursor: pointer;
+  padding: 40px;
+}
+main .video-section .video-inner .video-list .video-item .video-info:hover{
+  color: #aaa;
+}
+main .goods-section{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/product/images/special/2nd_single_announce/bg_triangle_left_2.svg");
+  /* background-position: center left; */
+  background-size: contain;
+  background-repeat: no-repeat; 
+}
+main .goods-section .goods-inner{
+  width: 1200px;
+  padding: 20px 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease;
+}
+main .goods-section .goods-inner .goods-header{
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+main .goods-section .goods-inner .goods-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-img{
+  /* width: 250px; */
+  height: 160px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: deeppink;
+  color: #fff;
+  font-size: 50px;
+  transition: all 1s ease;
+  box-shadow: 0 0 20px #ccc;
+}
+main .goods-section .goods-inner .goods-list .goods-item:hover .goods-img{
+  transform: scale(0.95);
+  box-shadow: 0 0 30px #aaa;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-info{
+  padding: 20px;
+  cursor: pointer;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-info:hover .goods-title{
+  color: #577979;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-info .goods-subtitle{
+  color: #ccc;
+  font-size: 14px;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-info .goods-title{
+  color: #67b7b2;
+  padding: 10px 0;
+}
+main .goods-section .goods-inner .goods-list .goods-item .goods-info .goods-desc{
+  font-size: 14px;
+  color: #ccc;
+}
+main .concert-section{
+  background-image: url("https://cdn.hinatazaka46.com/files/14/hinata/product/images/bg_shakehands_v3.jpg");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .concert-section .concert-inner{
+  width: 1200px;
+}
+main .concert-section .concert-inner .concert-content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #fff;
+  height: 400px;
+  width: 800px;
+  border-radius: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+main .concert-section .concert-inner .concert-content .concert-img{
+  background-image: url("https://cdn.hinatazaka46.com/images/14/8d3/9f90af7682b18c1f040d53e79e691/500_500_102400.jpg");
+  border-radius: 40px 0 0 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+main .concert-section .concert-inner .concert-content .concert-info{
+  padding: 40px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: #67b7b2;
+}
+main .concert-section .concert-inner .concert-content:hover .concert-info,
+main .concert-section .concert-inner .concert-content:hover .concert-info .info-box .info-next .info-date{
+  color: #577979;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-title{
+  padding: 10px 0;
+  font-size: 25px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco{
+  margin-top: 20px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span{
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+  position: relative;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(1){
+  background-color: #96bddd;
+  top: -9px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(2){
+  background-color: #f5e998;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(3){
+  background-color: #f5e998;
+  top: -9px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(4){
+  background-color: #dfb9f1;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(5){
+  background-color: #f1b9e6;
+  top: -9px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-deco span:nth-child(6){
+  background-color: #f1d3b9;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ccc;
+  position: relative;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next .info-date{
+  color: #67b7b2;
+  transition: color 0.3s ease;
+  right: 0;
+  top: -80px;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next .info-date .date-year{
+  margin-right: 20px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next .info-date .date-month{
+  font-size: 50px;
+  height: 110px;
+  position: relative;
+  line-height: 80px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next .info-date .date-month:after{
+  content: "";
+  width: 1px;
+  height: 80px;
+  transform: rotate(46deg);
+  background-color: #67b7b2;
+  display: inline-block;
+  position: relative;
+  bottom: -36px;
+  left: 4px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-next .info-date .date-day{
+  font-size: 50px;
+  height: 110px;
+  display: flex;
+  position: relative;
+  bottom: -10px;
+  right: -5px;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-btn{
+  margin-top: 20px;
+  background-color: #79b7d5;
+  font-weight: 900;
+  color: #fff;
+  width: 120px;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 20px;
+}
+main .concert-section .concert-inner .concert-content .concert-info .info-box .info-detail{
+  font-size: 14px;
+  margin-top: 10px;
+  color: #333;
+}
+main .tweet-section{
+  width: 100%;
+  height: 300px;
+  background-color: #cdebf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main .tweet-section .copyright{
+  color: #8babab;
+  position: absolute;
+  right: 10%;
+  top: 30px;
+  cursor: pointer;
+}
+main .tweet-section .copyright:hover{
+  color: #636767;
+}
+main .tweet-section .tweet-inner{
+  font-size: 40px;
+  color: #67b7b2;
+}
+.more{
+  margin: 50px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  font-size: 20px;
+}
+.more .more-inner{
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(to right, #5bbee5, #52ddae);
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center!important;
+  padding-right: 10px;
+  justify-content: center;
+}
+.more .more-inner:after{
+  transition: all 200ms ease-in-out;
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  transform: rotate(45deg);
+}

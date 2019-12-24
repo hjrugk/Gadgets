@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.list-box{
+  width: 500px;
+  height: 400px;
+  padding: 15px;
+}
+.list-box .video-card{
+  width: 170px;
+}
+.list-box .video-card a{
+  display: block;
+  text-decoration: none;
+}
+.list-box .video-card .card-pic{
+  height: 96px;
+  background-color: #333;
+}
+.list-box .video-card .card-pic a{
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+.list-box .video-card .card-pic a .preview{
+  width: 170px;
+  height: 96px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.25s ease;
+}
+.list-box .video-card .card-pic a .preview .progress{
+  height: 10px;
+  background-color: #333;
+  border-width: 4px 8px;
+  border-style: solid;
+  border-color: #000;
+  box-sizing: border-box;
+}
+.list-box .video-card .card-pic a .preview .progress span{
+  display: block;
+  height: 2px;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.list-box .video-card .card-pic a img{
+  width: 100%;
+}
+.list-box .video-card .card-pic a .count{
+  color: white;
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  padding-bottom: 12px;
+  z-index: 2;
+}
+.list-box .video-card .card-pic a:hover img{
+  opacity: 0.6;
+}
+.list-box .video-card .card-pic a .count .left{
+  display: flex;
+}
+.list-box .video-card .card-pic a .count .left span{
+  padding-left: 12px;
+}
+.list-box .video-card .card-pic a:hover .count .left{
+  display: none;
+}
+.list-box .video-card .card-pic a:hover .count .right{
+  display: block;
+}
+.list-box .video-card .card-pic a .count .right{
+  display: none;
+  padding-left: 12px;
+}
+.list-box .video-card .title{
+  height: 40px;
+  overflow: hidden;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  margin: 10px 0 10px 0;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.list-box .video-card .up{
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+  padding: 0 10px;
+}
