@@ -13,14 +13,15 @@ let previewData = {
   }
 }
 window.onload = function () {
+  let timeout
   let card = document.querySelector(".list-box .video-card .card-pic a .preview")
   let progress = document.querySelector(".list-box .video-card .card-pic a .preview .progress span")
   card.addEventListener("mouseover", function (e) {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       card.style.opacity = 1
+      let xPos = 0
+      let yPos = 0
       card.addEventListener("mousemove", (e) => {
-        let xPos = 0
-        let yPos = 0
         let len = e.clientX - 20
         if (len <= 0) {
           len = 0
@@ -35,7 +36,6 @@ window.onload = function () {
         xPos = Math.floor(time % 10)
         yPos = Math.floor(time / 10)
         let x = xPos * 170
-        console.log(time, xPos, x)
         let y = 10 - yPos * 95.625
         card.style.backgroundImage = "url('https://i0.hdslb.com/bfs/videoshot/27507919.jpg@.webp')"
         card.style.backgroundSize = "1700px"
@@ -46,5 +46,6 @@ window.onload = function () {
   })
   card.addEventListener("mouseleave", () => {
     card.style.opacity = 0
+    clearTimeout(timeout)
   })
 }
