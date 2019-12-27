@@ -76,6 +76,11 @@
   cursor: pointer;
   border: 2px solid transparent;
 }
+.wrapper .carousel-container .carousel-indicator .indicator-list .indicator-item:hover{
+  border: 2px solid #fff;
+  background-color: #00a1d6;
+  transform: scale(1.3);
+}
 .wrapper .carousel-container .carousel-indicator .indicator-list .indicator-item.active{
   background-image: url("https://s1.hdslb.com/bfs/static/jinkela/international-home/asserts/icon_slide_selected.png");
   background-size: cover;
