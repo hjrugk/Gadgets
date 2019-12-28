@@ -24,7 +24,7 @@ server.on("request", (req, res) => {
         totalMoney = await 100
       } else {
         randomMoney = (Math.random() * 10).toFixed(2)
-        totalMoney = await (totalMoney - randomMoney).toFixed(2)
+        totalMoney = await (parseFloat(totalMoney) - randomMoney).toFixed(2)
       }
       sumMoney = await sumMoney + parseFloat(randomMoney)
       fs.writeFile("./data.json", JSON.stringify({
@@ -35,6 +35,13 @@ server.on("request", (req, res) => {
       })
 
       res.write(randomMoney)
+      res.end()
+    })
+  }
+  if(req.url === "/s") {
+    fs.readFile("./data.json", async (err, data) => {
+      sumMoney = await JSON.parse(data).sum
+      res.write(sumMoney.toFixed(2))
       res.end()
     })
   }

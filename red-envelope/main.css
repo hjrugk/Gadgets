@@ -41,6 +41,8 @@
   user-select: none;
   font-size: 14px;
   display: inline-block;
+  opacity: 0;
+  font-weight: 900;
 }
 /* .wrapper .inner .envelope .hidden .info.show{
   animation: showAccount 1s ease;
@@ -50,11 +52,13 @@
   line-height: 100px;
   display: inline-block;
   user-select: none;
+  /* transition: all 1s ease; */
   color: #f2e8ab;
 }
 .wrapper .inner .envelope .hidden .unit{
   color: #f2e8ab;
   user-select: none;
+  /* transition: all 1s ease; */
   font-weight: bold;
 }
 .wrapper .inner .envelope .top{
