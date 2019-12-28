@@ -8,19 +8,25 @@ window.onload = function() {
   let resetBtn = this.document.querySelector(".wrapper .inner .envelope .reset")
   money.onceClick = false
   info.onceClick = false
+  if(money.onceClick) {
+    money.classList.remove("un")
+  }else {
+    money.classList.add("un")
+  }
   money.addEventListener("click", (e) => {
-    ajax("http://127.0.0.1:3000/m","GET",(data) => {
-      moneyAccount.innerHTML = data
-    })
-    // let account = (Math.random() * 10).toFixed(2)
     if(!money.onceClick) {
+      ajax("http://127.0.0.1:3000/m","GET",(data) => {
+        moneyAccount.innerHTML = data
+      })
       money.classList.remove("reverse")
+      money.classList.remove("un")
       money.classList.add("reverse")
       money.onceClick = true
       content.classList.remove("opened")
       content.classList.add("opened")
       resetBtn.style.opacity = "1"
       money.style.opacity = "0"
+      money.style.cursor = "default"
       info.style.opacity = "1"
       info.style.transition = "all .2s ease .2s"
       moneyAccount.style.opacity = "1"
@@ -47,11 +53,13 @@ window.onload = function() {
   function reset() {
     money.onceClick = false
     money.classList.remove("reverse")
+    money.classList.add("un")
     money.style.boxShadow = "0px 5px 0px #333"
     resetBtn.style.opacity = "0"
     content.classList.remove("opened")
     money.style.opacity = "1"
     money.style.transform = "scale(1)"
+    money.style.cursor = "pointer"
     info.style.transition = "none .2s ease .2s"
     info.style.zIndex = "1"
     info.style.opacity = "0"
