@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: 100%;
+  background-color: #ccc;
+}
+.wrapper .inner{
+  width: 800px;
+  height: calc(100vh);
+  background-color: #c02c31;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .inner .lucky-zone{
+  width: 600px;
+  height: 360px;
+  background-color: #fff;
+  position: relative;
+}
+.wrapper .inner .lucky-zone .result{
+  width: 600px;
+  height: 360px;
+  background-color: #fff;
+  font-size: 40px;
+  text-align: center;
+  line-height: 360px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.wrapper .inner .lucky-zone canvas{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: all 1s ease;
+}

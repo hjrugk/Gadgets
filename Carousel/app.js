@@ -40,7 +40,7 @@ window.onload = function() {
   // 移动函数
   function moveTo(index = 0) {
     citems[index].style.zIndex = zi++
-    citems[index].style.transition = "transform 0.6s ease"
+    citems[index].style.transition = "transform 0.3s ease"
     citems[index].style.transform = "translate3d(0px, 0px, 0px)"
     citems[cur].style.transition = "transform 0.6s ease"
     // 当前元素之前的元素向前移动
