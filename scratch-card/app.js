@@ -1,13 +1,13 @@
 window.onload = function() {
   let canvas = document.querySelector(".wrapper .inner #my-canvas")
   let result = document.querySelector(".wrapper .inner .lucky-zone .result")
+  let oneMoreBtn = document.querySelector(".wrapper .inner .info span")
   let bonus = ["100元现金红包","再来一次","谢谢惠顾","20元花呗红包","优酷7天会员","湿纸巾一包"]
   let isAllowMove = false
   let count = 0
   let bonusIndex = 2
   canvas.style.backgroundColor = "#cccccc"
   let ctx = canvas.getContext("2d")
-  ctx.fillStyle = "#FFFFFF"
   canvas.addEventListener("mousedown", (e) => {
     isAllowMove = true
     let startX = e.offsetX
@@ -42,11 +42,15 @@ window.onload = function() {
       }else {
         bonusIndex = 5
       }
+      oneMoreBtn.style.visibility = "visible"
       ctx.clearRect(0,0,600,360)
       canvas.style.opacity = "0"
       canvas.style.zIndex = "1"
       result.style.zIndex = "2"
       result.innerHTML = bonus[bonusIndex]
     }
+  })
+  oneMoreBtn.addEventListener("click", () => {
+    window.location.reload()
   })
 }

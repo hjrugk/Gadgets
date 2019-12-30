@@ -11,14 +11,19 @@
   height: calc(100vh);
   background-color: #c02c31;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.wrapper .inner .title{
+  width: 750px;
+  display: inline-block;
+  text-align: center;
+}
+.wrapper .inner .title img{
+  width: 100%;
 }
 .wrapper .inner .lucky-zone{
   width: 600px;
   height: 360px;
-  background-color: #fff;
+  margin: 0 auto;
   position: relative;
 }
 .wrapper .inner .lucky-zone .result{
@@ -39,4 +44,14 @@
   top: 0;
   z-index: 2;
   transition: all 1s ease;
+}
+.wrapper .inner .info{
+  width: 800px;
+  display: inline-block;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+.wrapper .inner .info span{
+  cursor: pointer;
+  visibility: hidden;
 }

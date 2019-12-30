@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Matrix</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="reset">重新输入</div>
+    <div class="loading">
+      <span class="transferring">正在转换数据······</span><br/>
+      <span class="successed">数据转换成功</span>
+    </div>
+    <div class="inner"></div>
+    <div class="input">
+      <div class="container">
+        <h1>请输入要显示的数据:</h1>
+        <input class="data-input" type="text" placeholder="请输入数据，最长8个字符" maxlength="16">
+        <div class="radio-group">
+          <label for="binary">
+            <input type="radio" value="2" name="base" checked> 二进制
+          </label>
+          <label for="octal">
+            <input type="radio" value="8" name="base"> 八进制
+          </label>
+          <label for="decimal">
+            <input type="radio" value="10" name="base"> 十进制
+          </label>
+          <label for="hex">
+            <input type="radio" value="16" name="base"> 十六进制
+          </label>
+          <label for="raw">
+            <input type="radio" value="0" name="base"> 原文
+          </label>
+        </div>
+        <button class="submit-btn">提交</button>
+      </div>
+    </div>
+  </div>
+  <script src="../utils/toBinary.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

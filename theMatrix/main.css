@@ -1,0 +1,146 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: 100%;
+  height: calc(100vh);
+  background-color: #000000;
+  position: relative;
+}
+.wrapper .reset{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 5;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 900;
+  background-color: green;
+  border-radius: 5px;
+}
+.wrapper .loading{
+  position: absolute;
+  z-index: 4;
+  color: green;
+  font-size: 40px;
+  font-weight: 900;
+}
+.wrapper .loading .transferring{
+  opacity: 0;
+}
+.wrapper .loading .successed{
+  opacity: 0;
+}
+.wrapper .reset:hover{
+  opacity: 1;
+}
+.wrapper .input{
+  width: 100%;
+  height: calc(100vh);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  opacity: 1;
+  transition: all 1s ease;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+.wrapper .input .container{
+  width: 600px;
+  padding: 100px 0;
+  border: 1px solid green;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(16, 148, 104);
+  text-align: center;
+}
+.wrapper .input .container h1{
+  display: block;
+  margin-bottom: 40px;
+  color: green;
+}
+.wrapper .input .container .data-input{
+  outline: none;
+  background-color: transparent;
+  border: green solid 2px;
+  padding-left: 15px;
+  color: green;
+  box-shadow: 0px 0px 5px rgb(16, 148, 104);
+  font-size: 20px;
+  border-radius: 5px;
+  width: 400px;
+  height: 40px;
+}
+.wrapper .input .container .radio-group{
+  margin: 20px 0;
+  color: green;
+}
+.wrapper .input .container .submit-btn{
+  outline: none;
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 900;
+  background-color: green;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px green;
+}
+.wrapper .inner{
+  width: 100%;
+  height: calc(100vh);
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  background-color: #000;
+}
+.wrapper .inner .code{
+  color: green;
+  transform-style: preserve-3d;
+  transform-origin: 0 0;
+  perspective: 1000;
+  user-select: none;
+  position: absolute;
+  transform: rotate3d(0,0,1,90deg);
+  text-shadow: 0px 0px 2px aquamarine;
+  animation: downwards 2s ease alternate-reverse infinite;
+}
+@keyframes downwards {
+  0%{
+    transform: translateY(800px) rotate3d(0,0,1,90deg);
+  }
+  100%{
+    transform: translateY(-200px) rotate3d(0,0,1,90deg);
+  }
+}
+@keyframes blinking{
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes showData{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
