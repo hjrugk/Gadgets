@@ -1,5 +1,5 @@
 function toBinary(str, base) {
-  str = str || "中国人民"
+  str = str || "hjrugk"
   if(base == "0") {
     return str
   }
