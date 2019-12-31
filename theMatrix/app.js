@@ -28,7 +28,7 @@ window.onload = function() {
           showTransfer()
           resetBtn.style.display = "block"
           sampleContainer.style.visibility = "visible"
-          sampleContainer.style.filter = "blur(3px) grayscale(80%)"
+          sampleContainer.style.filter = "blur(1px) grayscale(80%)"
           createDataStream(res,dataRontainer)
         }, 5000)
       }
@@ -38,6 +38,7 @@ window.onload = function() {
     inputContainer.style.opacity = "1"
     // inputGroup.style.zIndex = "4"
     resetBtn.style.display = "none"
+    sampleContainer.style.filter = "grayscale(50%)"
     inputContainer.style.visibility = "visible"
     dataRontainer.style.zIndex = "1"
     codeNodes = []
