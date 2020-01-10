@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: 100%;
+  height: calc(100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .inner{
+  width: 800px;
+  height: 600px;
+  text-align: center;
+}
+.wrapper .inner .title{
+  font-size: 50px;
+  display: block;
+  padding: 50px;
+}
+.wrapper .inner .digits{
+  position: relative;
+  height: 200px;
+  width: 800px;
+}
+.wrapper .inner .counter, .wrapper .inner .dec{
+  height: 200px;
+  width: 800px;
+  overflow: hidden;
+  position: absolute;
+  left: 420px;
+  top: 0;
+}
+.wrapper .inner .dec{
+  left: 300px;
+}
+.wrapper .inner .hun{
+  position: absolute;
+  height: 200px;
+  width: 800px;
+  font-size: 10rem;
+  z-index: 6;
+  background-color: #fff;
+  transition: all .3s ease;
+}
+.wrapper .inner .counter .number, .wrapper .inner .dec .number{
+  height: 200px;
+  width: 60px;
+  z-index: 1;
+  background-color: #fff;
+  text-align: center;
+  font-size: 10rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-200px);
+  transition: all 0.3s ease;
+}
+.wrapper .inner .counter .number.active,.wrapper .inner .dec .number.active{
+  transform: translateY(0px);
+}

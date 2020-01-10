@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+}
+.wrapper .inner{
+  width: 500px;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .inner .wave{
+  width: 100px;
+  height: 100px;
+  background-color: #5291e0;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper .inner .wave:after, .wrapper .inner .wave:before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 15%;
+  width: 500%;
+  height: 500%;
+  border-radius: 45%;
+  background-color: #fff;
+  transform: translateX(-50%);
+  animation: rotate 15s linear infinite;
+}
+.wrapper .inner .wave:before{
+  bottom: 10%;
+  opacity: .5;
+  border-radius: 47%;
+}
+@keyframes rotate{
+  from{
+    transform: translateX(-50%) rotateZ(0deg);
+  }
+  to{
+    transform: translateX(-50%) rotateZ(360deg);
+  }
+}
