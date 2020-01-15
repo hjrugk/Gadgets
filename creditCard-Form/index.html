@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Credit Card Form</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="inner">
+      <div class="container">
+        <div class="card">
+          <div class="card-image">
+            <div class="left-image">
+              <img src="../server/image/unionPay.png" alt="">
+            </div>
+            <div class="right-image">
+              <img src="../server/image/cb-default.png" alt="" id="bank-logo">
+            </div>
+          </div>
+          <div class="card-number">
+            <!-- <input type="text" maxlength="23" id="display-number" readonly placeholder="#### #### #### #### ###"> -->
+            <div class="number-container">
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>&nbsp;</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>&nbsp;</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>&nbsp;</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+              <span>&nbsp;</span>
+              <span>#</span>
+              <span>#</span>
+              <span>#</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="card-name">Card Holder
+              <input type="text" id="display-name" value="Your Name">
+            </div>
+            <div class="card-date">Expires
+              <input type="text" id="display-date" value="MM/YY">
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div class="top-magnetic"></div>
+          <div class="middle-sign">
+            <input type="text" id="cw-display" maxLength="4">
+            <div class="label">CW</div>
+          </div>
+        </div>
+        <div class="form">
+          <div class="card-number">
+            <label for="card-number">Card Number<br>
+              <input type="text" maxlength="23" placeholder="Please input your card number" id="number-ipt">
+            </label>
+          </div>
+          <div class="card-name">
+            <label for="card-name">Card Name<br>
+              <input type="text" placeholder="Please input your card name" id="name-ipt" maxlength="15">
+            </label>
+          </div>
+          <div class="card-info">
+            <div class="date">
+              <label for="expiration-month">Expiration Date<br>
+                <select name="expiration-month" id="month-slt">
+                  <option value="" selected disabled>Month</option>
+                  <option value="01">1</option>
+                  <option value="02">2</option>
+                  <option value="03">3</option>
+                  <option value="04">4</option>
+                  <option value="05">5</option>
+                  <option value="06">6</option>
+                  <option value="07">7</option>
+                  <option value="08">8</option>
+                  <option value="09">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </label>
+              <label for="expiration-year">
+                <select name="expiration-year" id="year-slt">
+                  <option value="" selected disabled>Year</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                </select>
+              </label>
+            </div>
+            <div class="cw-number">
+              <label for="cw-number">CW<br>
+                <input type="text" maxLength="4" id="cw-ipt">
+              </label>
+            </div>
+          </div>
+          <div class="card-submit">
+            <input type="button" value="Submit" id="submit-btn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

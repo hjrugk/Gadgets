@@ -1,0 +1,193 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Source Code Pro;
+}
+input, select, option{
+  background: none;
+  border: none;
+}
+.wrapper{
+  width: 100%;
+  height: calc(100vh);
+}
+.wrapper .inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .inner .container{
+  width: 500px;
+  height: 500px;
+  box-shadow: 0px 0px 5px #999;
+  border-radius: 5px;
+  position: relative;
+}
+.wrapper .inner .container .card, .wrapper .inner .container .back{
+  position: absolute;
+  width: 364px;
+  height: 216px;
+  left: 50%;
+  top: -20%;
+  transform-style: preserve-3d;
+  background-image: url("../server/image/background.jpg");
+  transition: all .6s ease;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #333;
+}
+.wrapper .inner .container .back .top-magnetic{
+  width: 100%;
+  height: 30px;
+  background-color: #000;
+  margin-top: 30px;
+}
+.wrapper .inner .container .back .middle-sign{
+  width: 100%;
+  height: 50px;
+  background-color: #ddd;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.wrapper .inner .container .back .middle-sign #cw-display{
+  font-size: 20px;
+}
+.wrapper .inner .container .back .middle-sign .label{
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 12px;
+}
+.wrapper .inner .container .card{
+  background-size: cover;
+  transform: translateX(-50%) rotateY(0deg);
+}
+.wrapper .inner .container .back{
+  transform: translateX(-50%) rotateY(180deg);
+}
+.wrapper .inner .container .card .card-image{
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .inner .container .card .card-image .left-image,.wrapper .inner .container .card .card-image .right-image{
+  width: 50px;
+  padding: 20px 20px;
+}
+.wrapper .inner .container .card .card-image .left-image img,.wrapper .inner .container .card .card-image .right-image img{
+  height: 50px;
+  transition: all .6s ease;
+}
+.wrapper .inner .container .card .card-number{
+  margin: 10px 20px 20px 20px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 0px #fff;
+  box-sizing: border-box;
+  border: 0px solid #fff;
+  transition: all .3s ease;
+}
+.wrapper .inner .container .card .card-number .number-container{
+  width: 300px;
+  height: 30px;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  display: flex;
+  border-radius: 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 0px #fff;
+  color: #fff;
+  transition: all .3s ease;
+}
+.wrapper .inner .container .card .card-info{
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .inner .container .card .card-info .card-name{
+  font-size: 12px;
+  color: #fff;
+  border-radius: 0px;
+  box-sizing: border-box;
+  transition: all .3s ease;
+  box-shadow: 0px 0px 0px #fff;
+  padding-left: 5px;
+  margin-right: 50px;
+}
+.wrapper .inner .container .card .card-info .card-name #display-name{
+  width: 170px;
+  height: 30px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+.wrapper .inner .container .card .card-info .card-date{
+  font-size: 12px;
+  padding-left: 5px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 0px #fff;
+  transition: all .3s ease;
+  color: #fff;
+}
+.wrapper .inner .container .card .card-info .card-date #display-date{
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+.wrapper .inner .container .form{
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+.wrapper .inner .container .form .card-number,.wrapper .inner .container .form .card-name,.wrapper .inner .container .form .card-info,.wrapper .inner .container .form .card-submit{
+  width: 100%;
+  padding: 35px 40px 0 40px;
+}
+.wrapper .inner .container .form .card-info{
+  display: flex;
+}
+.wrapper .inner .container .form .card-info .cw-number{
+  margin-left: 25px;
+}
+.wrapper .inner .container .form .card-number #number-ipt,.wrapper .inner .container .form .card-name #name-ipt{
+  width: 400px;
+  height: 30px;
+  display: block;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #333;
+  user-select: none;
+}
+.wrapper .inner .container .form .card-info .date #month-slt,.wrapper .inner .container .form .card-info .date #year-slt{
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  box-shadow: 0px 0px 3px #333;
+  padding: 0 5px;
+}
+.wrapper .inner .container .form .card-info #cw-ipt{
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #333;
+}
+.wrapper .inner .container .form .card-submit #submit-btn{
+  width: 420px;
+  height: 40px;
+  background-color: #103b97;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
