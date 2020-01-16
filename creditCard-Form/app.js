@@ -17,9 +17,14 @@ window.onload = function () {
   
   let nameContainer = document.querySelector(".wrapper .inner .container .card .card-name")
   let dateContainer = document.querySelector(".wrapper .inner .container .card .card-date")
+  let monthBack = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-month #holder-month")
+  let monthForward = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-month #display-month")
+  let yearBack = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-year #holder-year")
+  let yearForward = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-year #display-year")
   let numberContainer = document.querySelector(".wrapper .inner .container .card .card-number .number-container")
   
-  let numbers = numberContainer.querySelectorAll("span")
+  let numberForward = numberContainer.querySelectorAll(".span-forward")
+  let numberBack = numberContainer.querySelectorAll(".span-back")
   let m = "MM"
   let y = "YY"
 
@@ -47,17 +52,17 @@ window.onload = function () {
       let len = numberIpt.value.length
       for (let i = 0; i < len; i++) {
         if (numberIpt.value[i] === " ") {
-          numbers[i].innerHTML = `&nbsp;`
+          continue
         } else {
-          numbers[i].innerText = numberIpt.value[i]
+          rotateSpan(numberBack[i], numberForward[i], numberIpt.value[i])
         }
       }
     } else if (e.inputType === "deleteContentBackward") {
       for (let i = numberIpt.value.length; i < 23; i++) {
         if (i === 4 || i === 9 || i === 14 || i === 19) {
-          numbers[i].innerHTML = "&nbsp;"
+          continue
         } else {
-          numbers[i].innerText = "#"
+          rotateSpan(numberBack[i], numberForward[i], "")
         }
       }
     }
@@ -81,11 +86,11 @@ window.onload = function () {
   })
   monthSlt.addEventListener("change", (e) => {
     m = e.target.value
-    dateDisplay.value = m + "/" + y
+    rotateSpan(monthBack, monthForward, m)
   })
-  yearSlt.addEventListener("change", (e) => {
+  yearSlt.addEventListener("change", (e) => { 
     y = e.target.value.substring(2)
-    dateDisplay.value = m + "/" + y
+    rotateSpan(yearBack, yearForward, y)
   })
   cwIpt.addEventListener("focus", () => {
     rotateTransition(1)
@@ -118,6 +123,18 @@ window.onload = function () {
     ele1.addEventListener("blur", () => {
       outlineTransition(ele2, 0)
     })
+  }
+
+  function rotateSpan(elBack, elForward, val) {
+    if(val){
+      elBack.style.transform = "translateY(-25px)"
+      elForward.style.transform = "translateY(-25px)"
+      elForward.innerText = val
+    }else{
+      elBack.style.transform = "translateY(0px)"
+      elForward.style.transform = "translateY(0px)"
+      elForward.innerText = ""
+    }
   }
 
   eventFocusAndBlur(numberIpt, numberContainer)
