@@ -11,7 +11,6 @@ window.onload = function () {
   let submitBtn = document.querySelector(".wrapper .inner .container .form .card-submit #submit-btn")
 
   let nameDisplay = document.querySelector(".wrapper .inner .container .card .card-name #display-name")
-  let dateDisplay = document.querySelector(".wrapper .inner .container .card .card-date #display-date")
   let cwDisplay = document.querySelector(".wrapper .inner .container .back .middle-sign #cw-display")
   let imgDisplay = document.querySelector(".wrapper .inner .container .card .card-image .right-image #bank-logo")
 
@@ -26,6 +25,7 @@ window.onload = function () {
 
   let numberForward = numberContainer.querySelectorAll(".span-forward")
   let numberBack = numberContainer.querySelectorAll(".span-back")
+  
   let m = "MM"
   let y = "YY"
 
