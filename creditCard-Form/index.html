@@ -7,7 +7,7 @@
   <title>Credit Card Form</title>
   <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body onselectstart="return false">
   <div class="wrapper">
     <div class="inner">
       <div class="container">
@@ -143,21 +143,21 @@
             <div class="label">CW</div>
           </div>
         </div>
-        <div class="form">
+        <form class="form">
           <div class="card-number">
             <label for="card-number">Card Number<br>
-              <input type="text" maxlength="23" placeholder="Please input your card number" id="number-ipt">
+              <input type="text" maxlength="23" onmousemove="return false" placeholder="Please input your card number" id="number-ipt" pattern="[0-9\s]+" required>
             </label>
           </div>
           <div class="card-name">
             <label for="card-name">Card Name<br>
-              <input type="text" placeholder="Please input your card name" id="name-ipt" maxlength="15">
+              <input type="text" placeholder="Please input your card name" id="name-ipt" maxlength="14" required pattern="[0-9\s]+">
             </label>
           </div>
           <div class="card-info">
             <div class="date">
               <label for="expiration-month">Expiration Date<br>
-                <select name="expiration-month" id="month-slt">
+                <select name="expiration-month" id="month-slt" required>
                   <option value="" selected disabled>Month</option>
                   <option value="01">1</option>
                   <option value="02">2</option>
@@ -174,7 +174,7 @@
                 </select>
               </label>
               <label for="expiration-year">
-                <select name="expiration-year" id="year-slt">
+                <select name="expiration-year" id="year-slt" required>
                   <option value="" selected disabled>Year</option>
                   <option value="2009">2009</option>
                   <option value="2010">2010</option>
@@ -193,17 +193,17 @@
             </div>
             <div class="cw-number">
               <label for="cw-number">CW<br>
-                <input type="text" maxLength="4" id="cw-ipt">
+                <input type="text" maxLength="4" id="cw-ipt" required>
               </label>
             </div>
           </div>
           <div class="card-submit">
-            <input type="button" value="Submit" id="submit-btn">
+            <input type="submit" value="Submit" id="submit-btn">
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
   <script src="app.js"></script>
-</body>
+</body onselectstart="return false">
 </html>

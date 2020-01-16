@@ -6,6 +6,8 @@
 input, select, option{
   background: none;
   border: none;
+  -webkit-user-select:none;
+  user-select: none;
 }
 .wrapper{
   width: 100%;

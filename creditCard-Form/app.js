@@ -78,6 +78,7 @@ window.onload = function () {
       imgDisplay.src = "../server/image/cb-default.png"
     }
   })
+
   nameIpt.addEventListener("input", (e) => {
     if (nameIpt.value.length === 0) {
       nameDisplay.value = "Your Name"
@@ -103,7 +104,8 @@ window.onload = function () {
     let value = e.target.value
     cwDisplay.value = value
   })
-  submitBtn.addEventListener("click", () => {
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     console.log(numberIpt.value.replace(/\s/g, ""), nameIpt.value, monthForward.innerText + "/" + yearForward.innerText, cwIpt.value)
   })
 
