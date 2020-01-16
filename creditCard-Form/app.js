@@ -2,27 +2,28 @@ window.onload = function () {
   let card = document.querySelector(".wrapper .inner .container .card")
   let back = document.querySelector(".wrapper .inner .container .back")
 
-  
+
   let numberIpt = document.querySelector(".wrapper .inner .container .form .card-number #number-ipt")
   let nameIpt = document.querySelector(".wrapper .inner .container .form .card-name #name-ipt")
   let cwIpt = document.querySelector(".wrapper .inner .container .form .card-info #cw-ipt")
   let monthSlt = document.querySelector(".wrapper .inner .container .form .card-info #month-slt")
   let yearSlt = document.querySelector(".wrapper .inner .container .form .card-info #year-slt")
   let submitBtn = document.querySelector(".wrapper .inner .container .form .card-submit #submit-btn")
-  
+
   let nameDisplay = document.querySelector(".wrapper .inner .container .card .card-name #display-name")
   let dateDisplay = document.querySelector(".wrapper .inner .container .card .card-date #display-date")
   let cwDisplay = document.querySelector(".wrapper .inner .container .back .middle-sign #cw-display")
   let imgDisplay = document.querySelector(".wrapper .inner .container .card .card-image .right-image #bank-logo")
-  
+
   let nameContainer = document.querySelector(".wrapper .inner .container .card .card-name")
   let dateContainer = document.querySelector(".wrapper .inner .container .card .card-date")
+  let numberContainer = document.querySelector(".wrapper .inner .container .card .card-number .number-container")
+
   let monthBack = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-month #holder-month")
   let monthForward = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-month #display-month")
   let yearBack = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-year #holder-year")
   let yearForward = document.querySelector(".wrapper .inner .container .card .card-date .date-container .span-year #display-year")
-  let numberContainer = document.querySelector(".wrapper .inner .container .card .card-number .number-container")
-  
+
   let numberForward = numberContainer.querySelectorAll(".span-forward")
   let numberBack = numberContainer.querySelectorAll(".span-back")
   let m = "MM"
@@ -54,7 +55,7 @@ window.onload = function () {
         if (numberIpt.value[i] === " ") {
           continue
         } else {
-          rotateSpan(numberBack[i], numberForward[i], numberIpt.value[i])
+          rotateSpan(numberBack[i], numberForward[i], numberIpt.value[i], 1)
         }
       }
     } else if (e.inputType === "deleteContentBackward") {
@@ -62,7 +63,7 @@ window.onload = function () {
         if (i === 4 || i === 9 || i === 14 || i === 19) {
           continue
         } else {
-          rotateSpan(numberBack[i], numberForward[i], "")
+          rotateSpan(numberBack[i], numberForward[i], "", 0)
         }
       }
     }
@@ -86,11 +87,11 @@ window.onload = function () {
   })
   monthSlt.addEventListener("change", (e) => {
     m = e.target.value
-    rotateSpan(monthBack, monthForward, m)
+    rotateSpan(monthBack, monthForward, m, 1)
   })
-  yearSlt.addEventListener("change", (e) => { 
+  yearSlt.addEventListener("change", (e) => {
     y = e.target.value.substring(2)
-    rotateSpan(yearBack, yearForward, y)
+    rotateSpan(yearBack, yearForward, y, 1)
   })
   cwIpt.addEventListener("focus", () => {
     rotateTransition(1)
@@ -103,7 +104,7 @@ window.onload = function () {
     cwDisplay.value = value
   })
   submitBtn.addEventListener("click", () => {
-    console.log(numberIpt.value.replace(/\s/g, ""), nameIpt.value, dateDisplay.value, cwIpt.value)
+    console.log(numberIpt.value.replace(/\s/g, ""), nameIpt.value, monthForward.innerText + "/" + yearForward.innerText, cwIpt.value)
   })
 
   function outlineTransition(ele, flag) {
@@ -125,16 +126,11 @@ window.onload = function () {
     })
   }
 
-  function rotateSpan(elBack, elForward, val) {
-    if(val){
-      elBack.style.transform = "translateY(-25px)"
-      elForward.style.transform = "translateY(-25px)"
-      elForward.innerText = val
-    }else{
-      elBack.style.transform = "translateY(0px)"
-      elForward.style.transform = "translateY(0px)"
-      elForward.innerText = ""
-    }
+  function rotateSpan(elBack, elForward, val, flag) {
+    val = val || ""
+    elBack.style.transform = "translateY(" + (flag * -25) + "px)"
+    elForward.style.transform = "translateY(" + (flag * -25) + "px)"
+    elForward.innerText = val
   }
 
   eventFocusAndBlur(numberIpt, numberContainer)
