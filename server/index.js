@@ -1,5 +1,6 @@
 const http = require("http")
 const fs = require("fs")
+const url = require("url")
 const server = http.createServer(function (req, res) {
   res.writeHead(200, {
     'Content-Type': 'application/json;charset=utf-8',
@@ -8,10 +9,12 @@ const server = http.createServer(function (req, res) {
   })
 })
 
-server.on("request", (req, res) => {
+server.on("request", async (req, res) => {
   let totalMoney
   let randomMoney
   let sumMoney
+  let u = url.parse(req.url)
+
   if (req.url === "/m") {
     fs.readFile("./data.json", async (err, data) => {
       totalMoney = await JSON.parse(data).total
@@ -43,6 +46,30 @@ server.on("request", (req, res) => {
       sumMoney = await JSON.parse(data).sum
       res.write(sumMoney.toFixed(2))
       res.end()
+    })
+  }
+  if(u.pathname === "/p") {
+    let q = u.query
+    let queryArr = q.split("=")
+    let url = queryArr[1]
+    let fileData = url + "\n"
+    fs.appendFile("./ref.txt", fileData, (err) => {
+      if(!err) {
+        console.log("save success!!!")
+        res.write("save success")
+        res.end()
+      }
+    })
+  }
+  if(req.url === "/l") {
+    fs.readFile("./ref.txt", (err, data) => {
+      if(err) {
+        console.log(err)
+      }
+      if(data) {
+        res.write(data)
+        res.end()
+      }
     })
   }
 })

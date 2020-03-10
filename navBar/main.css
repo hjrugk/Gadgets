@@ -1,0 +1,48 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+ul, li {
+  list-style: none;
+}
+.wrapper{
+  width: 100%;
+}
+.wrapper .inner{
+  width: 100%;
+}
+.wrapper .inner nav{
+  text-align: center;
+}
+.wrapper .inner nav .navbar{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.wrapper .inner nav .navbar .nav-item{
+  padding: 20px 40px;
+  position: relative;
+}
+.wrapper .inner nav .navbar .nav-item.active:after{
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #ccc;
+}
+.wrapper .inner .collaspe{
+  position: absolute;
+  left: 0;
+  /* transform: translateX(-50%); */
+  transition: all .3s ease;
+  opacity: 1;
+}
+.wrapper .inner .collaspe .collaspe-list{
+  background-color: #ccc;
+  text-align: center;
+}
+.wrapper .inner .collaspe .collaspe-list .collaspe-item{
+  padding: 20px 50px;
+}

@@ -1,21 +1,23 @@
 let t
 window.onload = function() {
   let citems = document.querySelectorAll(".wrapper .carousel-container .carousel-list .carousel-item")
-  let indicators = document.querySelectorAll(".wrapper .carousel-container .carousel-indicator .indicator-list .indicator-item")
+  let indicUl = document.querySelector(".wrapper .carousel-container .carousel-indicator .indicator-list")
+  let indicators = Array.from(indicUl.children)
+
   let cur = 0
   let zi = 2
   t = intervalMove(cur)
-  indicators.forEach((indicator, index) => {
-    indicator.onceClick = false
-    indicator.addEventListener("click", () => {
-      if(!indicator.onceClick) {
-        clearInterval(t)
-        reset(index)
-        moveTo(index)
-        changeClass(indicators, indicator)
-        t = intervalMove(index)
-      }
-    })
+  indicUl.addEventListener("click", (e) => {
+    const item = e.target
+    let index = parseInt(item.dataset.index)
+    item.onceClick = false
+    if(!t.onceClick) {
+      clearInterval(t)
+      reset(index)
+      moveTo(index)
+      changeClass(indicators, item)
+      t = intervalMove(index)
+    }
   })
 
   function intervalMove(cur){

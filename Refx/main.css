@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#paper-title{
+  width: 800px;
+  height: 40px;
+  padding: 0 10px;
+}
+#paper-url{
+  width: 400px;
+  height: 40px;
+  padding: 0 10px;
+}
+#submit-btn{
+  width: 100px;
+  height: 40px;
+}
